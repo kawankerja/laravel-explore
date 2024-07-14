@@ -15,6 +15,8 @@ class Cities extends Model
 
     protected $fillable = ['name', 'country_id'];
 
+    public $timestamps = true;
+
     public function country(): BelongsTo
     {
         return $this->belongsTo(Countries::class, 'country_id', 'id');

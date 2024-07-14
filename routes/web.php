@@ -10,4 +10,5 @@ Route::get('/', function () {
 Route::controller(CitiesController::class)->group(function () {
     Route::get('/kota', 'index')->name('kota.index');
     Route::get('/export', 'export')->name('export.index');
+    Route::post('/city-import', 'import')->name('import.index');
 });

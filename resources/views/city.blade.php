@@ -21,7 +21,9 @@
   <h2>Data Nama</h2>
 
   <form action="/city-import" method="post" enctype="multipart/form-data">
-    <input type="file" name="file">
+    @csrf
+    <input type="file" name="import-excel">
+    <button type="submit">import excel</button>
   </form>
 
   <table class="table table-bordered custom-table">
