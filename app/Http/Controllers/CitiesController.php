@@ -13,10 +13,10 @@ use Maatwebsite\Excel\Facades\Excel;
 class CitiesController extends Controller
 {
     public function index(){
-        $kota = Cities::with('country')->get();
-        $countries = Countries::all();
+        $kota = Cities::all();
+        // $countries = Countries::all();
         // dd($kota);
-        return view('city', compact('kota', 'countries'));
+        return view('city', compact('kota'));
     }
 
     public function export(){

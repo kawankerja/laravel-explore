@@ -13,13 +13,13 @@ class Cities extends Model
 
     protected $table = 'cities';
 
-    protected $fillable = ['name', 'country_id'];
+    protected $fillable = ['kota', 'negara'];
 
     public $timestamps = true;
 
-    public function country(): BelongsTo
-    {
-        return $this->belongsTo(Countries::class, 'country_id', 'id');
-    }
+    // public function country(): BelongsTo
+    // {
+    //     return $this->belongsTo(Countries::class, 'country_id', 'id');
+    // }
 
 }

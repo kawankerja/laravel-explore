@@ -13,6 +13,7 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 class CitiesExport implements FromQuery, WithMapping, WithHeadings, ShouldAutoSize
 {
     use Exportable;
+    private $currentRow = 1;
     /**
     * @return \Illuminate\Database\Query\Buildern
     */
@@ -23,13 +24,15 @@ class CitiesExport implements FromQuery, WithMapping, WithHeadings, ShouldAutoSi
     // untuk menselect data yang ditampilkan di excel
     public function map($city): array {
         return [
-            $city->name,
-            $city->country->name,
+            $this->currentRow++, //menambah urutan
+            $city->kota,
+            $city->negara,
         ];
     }
     // untuk membuat header atau judul
     public function headings(): array {
         return [
+            'No',
             'Kota',
             'Negara',
         ];

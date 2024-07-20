@@ -38,8 +38,8 @@
         @foreach ($kota as $key)
         <tr>
             <td>{{ $loop->iteration }}</td>
-            <td>{{ $key->name }}</td>
-            <td>{{ $key->country->name }}</td>
+            <td>{{ $key->kota }}</td>
+            <td>{{ $key->negara }}</td>
         </tr>
         @endforeach
     </tbody>

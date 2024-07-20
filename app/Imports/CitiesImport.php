@@ -28,22 +28,11 @@ class CitiesImport implements ToCollection, WithHeadingRow
     {
         foreach ($rows as $row)
         {
-            // untuk mengubah string menjadi id note tidak perlu menggunakan ini jika data tidak berelasi
-                $cities = Countries::where('name', $row['negara'])->first();
-
-                if($cities != null){
-                    Cities::create([
-                        'name' => $row['nama'],
-                        'country_id' => $cities['id'],
-                    ]);
-                } else {
-                    dd('masuk ke sini');
-                }
             // tanpa relasi data
-            // Cities::create([
-            //     'name' => $row['nama'],
-            //     'country_id' => $row['negara'],
-            // ]);
+            Cities::create([
+                'kota' => $row['kota'],
+                'negara' => $row['negara'],
+            ]);
         }
     }
 }
